@@ -88,6 +88,7 @@ object EngineType extends Enumeration with Logging {
     case _ if APPCONN.toString.equals(str) => APPCONN
     case _ if SQOOP.toString.equalsIgnoreCase(str) => SQOOP
     case _ if DATAX.toString.equalsIgnoreCase(str) => DATAX
+    //case _ if OPENLOOKENG.toString.equalsIgnoreCase(str) => OPENLOOKENG
     case _ => null
 
   }

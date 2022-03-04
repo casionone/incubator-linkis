@@ -88,18 +88,24 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.apache.linkis</groupId>
+            <artifactId>linkis-rpc</artifactId>
+            <version>1.1.0</version>
+            <scope>provided</scope>
+        </dependency>
 
-       <!-- <dependency>
-            <groupId>com.facebook.presto</groupId>
-            <artifactId>presto-resource-group-managers</artifactId>
-            <version>${presto.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>log-manager</artifactId>
-                    <groupId>com.facebook.airlift</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>com.facebook.presto</groupId>
+             <artifactId>presto-resource-group-managers</artifactId>
+             <version>${presto.version}</version>
+             <exclusions>
+                 <exclusion>
+                     <artifactId>log-manager</artifactId>
+                     <groupId>com.facebook.airlift</groupId>
+                 </exclusion>
+             </exclusions>
+         </dependency>-->
 
 
     </dependencies>
