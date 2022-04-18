@@ -70,7 +70,7 @@ jobs:
         cp -r linkis-engineconn-plugins/engineconn-plugins/jdbc/target/out/*    assembly-combined-package/target/apache-linkis-*-incubating-bin/linkis-package/lib/linkis-engineconn-plugins/
         cp -r linkis-engineconn-plugins/engineconn-plugins/pipeline/target/out/*  assembly-combined-package/target/apache-linkis-*-incubating-bin/linkis-package/lib/linkis-engineconn-plugins/
         cp  web/apache-linkis-*-incubating-web-bin.tar.gz   assembly-combined-package/target/apache-linkis-*-incubating-bin/
-#         重新打包tar
+       
         tar -czvf  $tarName -C  assembly-combined-package/target/apache-linkis-*-incubating-bin/ ./
 
     - name: Deploy
