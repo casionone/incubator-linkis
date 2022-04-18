@@ -59,7 +59,6 @@ jobs:
     - name: Generate install package
       run: |
         echo "workspace: "`pwd`
-        cd ../
         echo running on branch ${GITHUB_REF##*/}
         branch=${GITHUB_REF##*/}
         version=$branch.`date +"%Y%m%d_%H%M%S"`
