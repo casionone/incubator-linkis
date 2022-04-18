@@ -56,3 +56,27 @@ jobs:
           cd web
           npm install
           npm run build
+    - name: Generate install package
+      run: |
+        echo "workspace: "`pwd`
+        cd ../
+        echo running on branch ${GITHUB_REF##*/}
+        branch=${GITHUB_REF##*/}
+        version=$branch.`date +"%Y%m%d_%H%M%S"`
+        pkgName=apache-linkis-$version-package.tar.gz
+        tarName=apache-linkis-$version.tar.gz
+        cp -r linkis-engineconn-plugins/engineconn-plugins/flink/target/out/*  assembly-combined-package/target/apache-linkis-*-incubating-bin/linkis-package/lib/linkis-engineconn-plugins/
+        cp -r linkis-engineconn-plugins/engineconn-plugins/io_file/target/out/* assembly-combined-package/target/apache-linkis-*-incubating-bin/linkis-package/lib/linkis-engineconn-plugins/
+        cp -r linkis-engineconn-plugins/engineconn-plugins/jdbc/target/out/*    assembly-combined-package/target/apache-linkis-*-incubating-bin/linkis-package/lib/linkis-engineconn-plugins/
+        cp -r linkis-engineconn-plugins/engineconn-plugins/pipeline/target/out/*  assembly-combined-package/target/apache-linkis-*-incubating-bin/linkis-package/lib/linkis-engineconn-plugins/
+        cp  web/apache-linkis-*-incubating-web-bin.tar.gz   assembly-combined-package/target/apache-linkis-*-incubating-bin/
+#         重新打包tar
+        tar -czvf  $tarName -C  assembly-combined-package/target/apache-linkis-*-incubating-bin/ ./
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3.8.0
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/dev')
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: assembly-combined-package/target/
+        publish_branch: asf-staging

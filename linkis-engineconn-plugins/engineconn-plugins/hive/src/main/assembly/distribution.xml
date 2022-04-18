@@ -133,7 +133,6 @@
                 <exclude>org.apache.logging.log4j:log4j-jul:jar</exclude>
                 <exclude>org.apache.logging.log4j:log4j-slf4j-impl:jar</exclude>
                 <exclude>log4j:log4j:jar</exclude>
-                <exclude>org.apache.zookeeper:zookeeper:jar</exclude>
                 <exclude>org.aspectj:aspectjweaver:jar</exclude>
                 <exclude>org.bouncycastle:bcpkix-jdk15on:jar</exclude>
                 <exclude>org.bouncycastle:bcprov-jdk15on:jar</exclude>
@@ -246,7 +245,7 @@
                 <exclude>*doc.jar</exclude>
             </excludes>
             <fileMode>0777</fileMode>
-            <outputDirectory>/plugin/${hive.version}</outputDirectory>
+            <outputDirectory>/plugin/${hive.plugin.version}</outputDirectory>
         </fileSet>
 
     </fileSets>
