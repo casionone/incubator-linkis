@@ -72,10 +72,9 @@ jobs:
        
         tar -czvf  $tarName -C  assembly-combined-package/target/apache-linkis-*-incubating-bin/ ./
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3.8.0
-      if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/dev')
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: assembly-combined-package/target/
-        publish_branch: release-bin
+        name:  $tarName
+        path:  $tarName
+        retention-days: 30
