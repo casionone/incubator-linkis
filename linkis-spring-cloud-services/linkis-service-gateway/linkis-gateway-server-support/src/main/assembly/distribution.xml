@@ -38,6 +38,9 @@
             <unpack>false</unpack>
             <useStrictFiltering>false</useStrictFiltering>
             <useTransitiveFiltering>true</useTransitiveFiltering>
+            <excludes>
+                <exclude>com.github.xiaoymin:*:jar</exclude>
+            </excludes>
         </dependencySet>
     </dependencySets>
 
