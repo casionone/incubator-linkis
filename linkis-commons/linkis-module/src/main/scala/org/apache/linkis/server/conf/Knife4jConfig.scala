@@ -27,7 +27,22 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
-
+import org.springframework.context.annotation.Bean
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+import springfox.documentation.builders.ApiInfoBuilder
+import springfox.documentation.builders.PathSelectors
+import springfox.documentation.builders.RequestHandlerSelectors
+import springfox.documentation.service.ApiInfo
+import springfox.documentation.spi.DocumentationType
+import springfox.documentation.spring.web.plugins.Docket
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc
+import org.springframework.beans.factory.annotation.Value
 /**
  * it is very easy to enable knife when you want to use apiDoc(based on swagger2)
  * you can follow these steps to enable
