@@ -17,11 +17,9 @@
 
 package org.apache.linkis.engineconnplugin.sqoop.executor
 
-import org.apache.linkis.common.utils.{JsonUtils, OverloadUtils, Utils}
+import org.apache.linkis.common.utils.Utils
 import org.apache.linkis.engineconn.once.executor.{OnceExecutorExecutionContext, OperableOnceExecutor}
-import org.apache.linkis.engineconnplugin.sqoop.client.{LinkisSqoopClient, Sqoop}
 import org.apache.linkis.engineconnplugin.sqoop.context.SqoopResourceConfiguration.{LINKIS_QUEUE_NAME, LINKIS_SQOOP_TASK_MAP_CPU_CORES, LINKIS_SQOOP_TASK_MAP_MEMORY}
-import org.apache.linkis.engineconnplugin.sqoop.context.{SqoopEngineConnContext, SqoopParamsConfiguration}
 import org.apache.linkis.manager.common.entity.resource.{CommonNodeResource, DriverAndYarnResource, LoadInstanceResource, NodeResource, YarnResource}
 import org.apache.linkis.scheduler.executer.ErrorExecuteResponse
 import java.util

@@ -26,16 +26,6 @@ object SqoopParamsConfiguration {
 
   val SQOOP_PARAM_MODE: CommonVars[String] = CommonVars("sqoop.params.name.mode", "sqoop.mode")
 
-  val SQOOP_PARAM_HOST: CommonVars[String] = CommonVars("sqoop.params.name.host", "sqoop.args.host")
-
-  val SQOOP_PARAM_PORT: CommonVars[String] = CommonVars("sqoop.params.name.ip", "sqoop.args.port")
-
-  val SQOOP_PARAM_CONNECT_PARAMS: CommonVars[String] = CommonVars("sqoop.params.name.ip", "sqoop.args.params")
-
-  val SQOOP_PARAM_CONNECT: CommonVars[String] = CommonVars("sqoop.params.name.connect", "sqoop.args.connect")
-
-  val SQOOP_PARAM_DATA_SOURCE: CommonVars[String] = CommonVars("sqoop.params.name.data-source", "sqoop.args.datasource.name")
-
   val SQOOP_PARAM_PREFIX: CommonVars[String] = CommonVars("sqoop.params.name.prefix", "sqoop.args.")
 
   val SQOOP_PARAM_ENV_PREFIX: CommonVars[String] = CommonVars("sqoop.params.name.env.prefix", "sqoop.env.")

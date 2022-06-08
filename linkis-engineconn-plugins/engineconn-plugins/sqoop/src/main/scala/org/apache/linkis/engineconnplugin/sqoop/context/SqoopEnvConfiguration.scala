@@ -21,11 +21,9 @@ import org.apache.linkis.common.conf.{CommonVars, TimeType}
 
 object SqoopEnvConfiguration {
 
-  val SQOOP_HADOOP_SITE_FILE: CommonVars[String] = CommonVars("wds.linkis.hadoop.site.xml", "core-site.xml;hdfs-site.xml;yarn-site.xml;mapred-site.xml")
+  val SQOOP_HADOOP_SITE_FILE: CommonVars[String] = CommonVars("linkis.hadoop.site.xml", "core-site.xml;hdfs-site.xml;yarn-site.xml;mapred-site.xml")
 
   val SQOOP_STATUS_FETCH_INTERVAL: CommonVars[TimeType] = CommonVars("sqoop.fetch.status.interval", new TimeType("5s"))
-
-  val LINKIS_DATASOURCE_SERVICE_NAME: CommonVars[String] = CommonVars("wds.linkis.datasource.service.name", "linkis-ps-data-source-manager")
 
   val SQOOP_HOME: CommonVars[String] = CommonVars("SQOOP_HOME", "")
 

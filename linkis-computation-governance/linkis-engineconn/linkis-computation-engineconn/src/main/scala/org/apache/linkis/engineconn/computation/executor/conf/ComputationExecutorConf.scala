@@ -43,7 +43,7 @@ object ComputationExecutorConf {
 
   val ASYNC_EXECUTE_MAX_PARALLELISM = CommonVars("wds.linkis.engineconn.max.parallelism", 300)
 
-  val ASYNC_SCHEDULER_MAX_RUNNING_JOBS = CommonVars("wds.linkis.engineconn.async.group.max.running", 10).getValue
+  val ASYNC_SCHEDULER_MAX_RUNNING_JOBS = CommonVars("linkis.engineconn.async.group.max.running", 10).getValue
 
 
   val DEFAULT_COMPUTATION_EXECUTORMANAGER_CLAZZ = CommonVars("wds.linkis.default.computation.executormanager.clazz", "org.apache.linkis.engineconn.computation.executor.creation.ComputationExecutorManagerImpl")
@@ -56,5 +56,5 @@ object ComputationExecutorConf {
 
   val HIVE_RESULTSET_USE_TABLE_NAME = CommonVars("hive.resultset.use.unique.column.names", false)
 
-  val JOB_ID_TO_ENV_KEY = CommonVars("wds.linkis.ec.job.id.env.key", "LINKIS_JOB_ID").getValue
+  val JOB_ID_TO_ENV_KEY = CommonVars("linkis.ec.job.id.env.key", "LINKIS_JOB_ID").getValue
 }
