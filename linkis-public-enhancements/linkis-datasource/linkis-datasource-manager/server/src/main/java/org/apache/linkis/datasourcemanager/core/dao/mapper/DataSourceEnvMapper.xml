@@ -84,6 +84,13 @@
         WHERE `datasource_type_id` = #{id}
     </select>
 
+
+    <select id="listByTypeName" resultMap="dataSourceEnvMap">
+        SELECT `id`, `env_name` FROM `linkis_ps_dm_datasource_env`
+        WHERE `datasource_type_id` IN (select id  from `linkis_ps_dm_datasource_type` WHERE `name`= #{name})
+    </select>
+
+
     <select id="selectByPageVo" resultMap="dataSourceEnvMap">
         <![CDATA[SELECT e.`id`, e.`env_name`, e.`env_desc`, e.`parameter`, e.`create_time`,
         e.`create_user`, e.`modify_time`, e.`modify_user`, e.`datasource_type_id`

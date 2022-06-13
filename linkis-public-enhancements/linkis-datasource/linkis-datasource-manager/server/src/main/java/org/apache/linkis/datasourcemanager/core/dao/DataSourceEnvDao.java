@@ -48,6 +48,16 @@ public interface DataSourceEnvDao {
      */
     List<DataSourceEnv> listByTypeId(Long dataSourceTypeId);
 
+
+    /**
+     * List all by type name
+     *
+     * @param name type name
+     * @return
+     */
+    List<DataSourceEnv> listByTypeName(String name);
+
+
     /**
      * Remove one
      *

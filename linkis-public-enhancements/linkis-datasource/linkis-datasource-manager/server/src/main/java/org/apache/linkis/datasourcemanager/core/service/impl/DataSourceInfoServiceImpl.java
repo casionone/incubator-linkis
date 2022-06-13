@@ -263,6 +263,11 @@ public class DataSourceInfoServiceImpl implements DataSourceInfoService {
     }
 
     @Override
+    public List<DataSourceEnv> listDataSourceEnvByTypeName(String dataSourceTypeName) {
+        return dataSourceEnvDao.listByTypeName(dataSourceTypeName);
+    }
+
+    @Override
     public DataSourceEnv getDataSourceEnv(Long envId) {
         return dataSourceEnvDao.selectOneDetail(envId);
     }

@@ -33,6 +33,17 @@ public interface DataSourceParamKeyDao {
      */
     List<DataSourceParamKeyDefinition> listByDataSourceType(Long dataSourceTypeId);
 
+
+    /**
+     * List by data source type name
+     *
+     * @param dataSourceTypeName type name
+     * @return
+     */
+    List<DataSourceParamKeyDefinition> listByDataSourceTypeName(String dataSourceTypeName);
+
+
+
     /**
      * List by data source type id and scope
      *

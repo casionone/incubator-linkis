@@ -44,10 +44,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
+@Deprecated
 @RestController
-@RequestMapping(
-        value = "/data-source-manager",
-        produces = {"application/json"})
+@RequestMapping(value = "/data-source-manager", produces = {"application/json"})
 public class DataSourceAdminRestfulApi {
 
     @Autowired private DataSourceInfoService dataSourceInfoService;

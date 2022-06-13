@@ -54,6 +54,7 @@ import org.slf4j.LoggerFactory;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
+@Deprecated
 @RestController
 @RequestMapping(
         value = "/data-source-manager",

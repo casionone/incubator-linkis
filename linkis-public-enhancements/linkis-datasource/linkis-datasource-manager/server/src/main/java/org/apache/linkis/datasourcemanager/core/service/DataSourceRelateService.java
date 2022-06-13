@@ -41,6 +41,18 @@ public interface DataSourceRelateService {
      */
     List<DataSourceParamKeyDefinition> getKeyDefinitionsByType(Long dataSourceTypeId);
 
+
+
+    /**
+     * Get key definitions by data source type and scope
+     *
+     * @param dataSourceTypeName data source type name
+     * @return
+     */
+    List<DataSourceParamKeyDefinition> getKeyDefinitionsByTypeName(String dataSourceTypeName);
+
+
+
     /**
      * Get all data source types
      *

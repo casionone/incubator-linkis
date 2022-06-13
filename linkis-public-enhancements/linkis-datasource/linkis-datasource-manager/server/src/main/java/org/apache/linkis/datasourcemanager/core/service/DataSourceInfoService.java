@@ -116,6 +116,17 @@ public interface DataSourceInfoService {
      */
     List<DataSourceEnv> listDataSourceEnvByType(Long dataSourceTypeId);
 
+
+    /**
+     * List data source environments
+     *
+     * @param  dataSourceTypeName
+     * @return
+     */
+    List<DataSourceEnv> listDataSourceEnvByTypeName(String dataSourceTypeName);
+
+
+
     /**
      * Get data source environment
      *

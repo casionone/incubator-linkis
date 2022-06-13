@@ -39,12 +39,22 @@
     <select id="listByDataSourceType" resultMap="paramKeyMap" parameterType="Long">
         SELECT
         <include refid="param_key_query"/>
-        FROM `linkis_ps_dm_datasource_type_key` WHERE `data_source_type_id` = #{dataSourceTypeId};
+        FROM `linkis_ps_dm_datasource_type_key` WHERE `datasource_type_id` = #{dataSourceTypeId};
     </select>
+
+
+    <select id="listByDataSourceTypeName" resultMap="paramKeyMap" parameterType="String">
+        SELECT
+        <include refid="param_key_query"/>
+        FROM `linkis_ps_dm_datasource_type_key`
+        WHERE `datasource_type_id` IN (select id  from `linkis_ps_dm_datasource_type` WHERE `name`= #{name})
+    </select>
+
+
     <select id="listByDataSourceTypeAndScope" resultMap="paramKeyMap">
         <![CDATA[SELECT ]]>
         <include refid="param_key_query"/>
         <![CDATA[ FROM `linkis_ps_dm_datasource_type_key`
-        WHERE `data_source_type_id` = #{dataSourceTypeId} AND `scope` = #{scope};]]>
+        WHERE `datasource_type_id` = #{dataSourceTypeId} AND `scope` = #{scope};]]>
     </select>
 </mapper>

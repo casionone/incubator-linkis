@@ -47,6 +47,11 @@ public class DataSourceRelateServiceImpl implements DataSourceRelateService {
     }
 
     @Override
+    public List<DataSourceParamKeyDefinition> getKeyDefinitionsByTypeName(String dataSourceTypeName) {
+        return paramKeyDao.listByDataSourceTypeName(dataSourceTypeName);
+    }
+
+    @Override
     public List<DataSourceType> getAllDataSourceTypes() {
         return dataSourceTypeDao.getAllTypes();
     }
