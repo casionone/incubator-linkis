@@ -28,7 +28,7 @@ object GatewayConfiguration {
   val TOKEN_KEY = "Token-Code"
   val TOKEN_USER_KEY = "Token-User"
   val ENABLE_TOKEN_AUTHENTICATION = CommonVars("wds.linkis.gateway.conf.enable.token.auth", false)
-  val TOKEN_AUTHENTICATION_CONFIG = CommonVars("wds.linkis.gateway.conf.token.auth.config", "token.properties")
+
   val TOKEN_AUTHENTICATION_SCAN_INTERVAL = CommonVars("wds.linkis.gateway.conf.token.auth.scan.interval", 1000 * 60 * 10)
 
   val PASS_AUTH_REQUEST_URI = CommonVars("wds.linkis.gateway.conf.url.pass.auth", "/dws/").getValue.split(",")
@@ -78,4 +78,6 @@ object GatewayConfiguration {
 
   val THIS_GATEWAY_URL = CommonVars("wds.linkis.gateway.this.url", "")
   val THIS_GATEWAY_SCHEMA = CommonVars("wds.linkis.gateway.this.schema", "")
+
+  val ENABLE_WATER_MARK = CommonVars("wds.linkis.web.enable.water.mark", true)
 }

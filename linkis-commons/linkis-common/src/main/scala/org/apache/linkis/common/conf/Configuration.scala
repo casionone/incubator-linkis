@@ -30,20 +30,24 @@ object Configuration extends Logging {
 
   val IS_TEST_MODE = CommonVars("wds.linkis.test.mode", false)
 
+  val IS_PROMETHEUS_ENABLE = CommonVars("wds.linkis.prometheus.enable", false)
+
+  val PROMETHEUS_ENDPOINT = CommonVars("wds.linkis.prometheus.endpoint", "/actuator/prometheus")
+
   val LINKIS_HOME = CommonVars("wds.linkis.home", CommonVars("LINKIS_HOME", "/tmp").getValue)
 
   val GATEWAY_URL: CommonVars[String] = CommonVars[String]("wds.linkis.gateway.url", "http://127.0.0.1:9001/")
 
-  val LINKIS_WEB_VERSION:CommonVars[String] = CommonVars[String]("wds.linkis.web.version", "v1")
+  val LINKIS_WEB_VERSION: CommonVars[String] = CommonVars[String]("wds.linkis.web.version", "v1")
 
-  val REFLECT_SCAN_PACKAGE = CommonVars.apply("wds.linkis.reflect.scan.package", "org.apache.linkis,com.webank.wedatasphere").getValue.split(",")
+  val REFLECT_SCAN_PACKAGE: Array[String] = CommonVars.apply("wds.linkis.reflect.scan.package", "org.apache.linkis,com.webank.wedatasphere").getValue.split(",")
 
   val CLOUD_CONSOLE_CONFIGURATION_SPRING_APPLICATION_NAME = CommonVars("wds.linkis.console.configuration.application.name", "linkis-ps-configuration")
 
   val CLOUD_CONSOLE_VARIABLE_SPRING_APPLICATION_NAME = CommonVars("wds.linkis.console.variable.application.name", "linkis-ps-publicservice")
 
   //read from env
-  val EUREKA_PREFER_IP = CommonVars("EUREKA_PREFER_IP", false).getValue
+  val EUREKA_PREFER_IP: Boolean = CommonVars("EUREKA_PREFER_IP", false).getValue
 
   val GOVERNANCE_STATION_ADMIN = CommonVars("wds.linkis.governance.station.admin", "hadoop")
 
