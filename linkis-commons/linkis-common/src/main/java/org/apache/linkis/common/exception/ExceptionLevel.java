@@ -19,7 +19,9 @@ package org.apache.linkis.common.exception;
 
 public enum ExceptionLevel {
   /** warn 1 error 2 fatal 3 */
-  WARN(1, "warn"), ERROR(2, "error"), FATAL(3, "fatal"),
+  WARN(1, "warn"),
+  ERROR(2, "error"),
+  FATAL(3, "fatal"),
   RETRY(4, "retry");
   private int level;
   private String name;
