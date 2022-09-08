@@ -31,11 +31,10 @@ jobs:
       SHA: ${{ github.sha }}
 
     steps:
-      - name: pull request
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
 
       - name: Checkout
         uses: actions/checkout@v3
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
 
       - name: Set up JDK 8
         uses: actions/setup-java@v2
