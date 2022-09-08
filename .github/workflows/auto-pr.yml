@@ -64,6 +64,7 @@ jobs:
           body: |
             ## Code format apply
             - run the result of mvn spotless:apply
+
           labels: |
             format
             automated pr
