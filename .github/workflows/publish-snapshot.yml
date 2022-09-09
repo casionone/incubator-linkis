@@ -28,7 +28,7 @@ on:
     
 jobs:
   publish-snapshot:
-    if: ${{ startsWith(github.repository, 'apache/') }}
+#     if: ${{ startsWith(github.repository, 'apache/') }}
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
