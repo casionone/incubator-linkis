@@ -17,10 +17,15 @@
 
 name: Publish Snapshot
 
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'
 on:
-  schedule:
-    - cron: '0 0 * * *'
-
+  pull_request:
+    branches: [master,dev-*]
+  push:
+    branches: [master,dev-*]
+    
 jobs:
   publish-snapshot:
     if: ${{ startsWith(github.repository, 'apache/') }}
