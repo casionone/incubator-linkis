@@ -46,6 +46,7 @@ github_checks:
 ignore:
   - "**/entity/*"
   - "**/exception/*"
+  - "linkis-computation-governance/**/*"
 
 # See https://docs.codecov.com/docs/flags for options.
 flag_management:
