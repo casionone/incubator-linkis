@@ -36,7 +36,6 @@ import org.apache.linkis.datasourcemanager.core.validate.ParameterValidator;
 import org.apache.linkis.datasourcemanager.core.vo.DataSourceVo;
 import org.apache.linkis.metadata.query.common.MdmConfiguration;
 import org.apache.linkis.server.Message;
-import org.apache.linkis.server.security.SecurityFilter;
 
 import org.apache.linkis.server.utils.ModuleUserUtils;
 import org.codehaus.jackson.map.ObjectMapper;
