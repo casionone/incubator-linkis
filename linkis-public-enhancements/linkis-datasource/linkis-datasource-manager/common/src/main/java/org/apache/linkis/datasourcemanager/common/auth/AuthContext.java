@@ -50,18 +50,6 @@ public class AuthContext {
     }
   }
 
-  /**
-   * If has permission of data source
-   *
-   * @param dataSource data source
-   * @param request request
-   * @return boolean
-   */
-  public static boolean hasPermission(DataSource dataSource, HttpServletRequest request) {
-    String username = SecurityFilter.getLoginUsername(request);
-    return hasPermission(dataSource, username);
-  }
-
   public static boolean hasPermission(DataSource dataSource, String username) {
     if (Objects.nonNull(dataSource)) {
       String creator = dataSource.getCreateUser();

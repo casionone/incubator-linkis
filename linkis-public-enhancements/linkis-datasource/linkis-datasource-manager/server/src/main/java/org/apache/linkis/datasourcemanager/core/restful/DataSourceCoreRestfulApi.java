@@ -317,7 +317,7 @@ public class DataSourceCoreRestfulApi {
                     if (dataSource == null) {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have query permission for data source [没有数据源的查询权限]");
                     }
@@ -350,7 +350,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have query permission for data source [没有数据源的查询权限]");
                     }
@@ -385,7 +385,7 @@ public class DataSourceCoreRestfulApi {
                     return Message.error("No Exists The DataSource [不存在该数据源]");
                 }
 
-                if (!AuthContext.hasPermission(dataSource, request)) {
+                if (!AuthContext.hasPermission(dataSource, userName)) {
                     return Message.error(
                         "Don't have query permission for data source [没有数据源的查询权限]");
                 }
@@ -429,7 +429,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have query permission for data source [没有数据源的查询权限]");
                     }
@@ -468,7 +468,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have query permission for data source [没有数据源的查询权限]");
                     }
@@ -511,7 +511,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have publish permission for data source [没有数据源的发布权限]");
                     }
@@ -550,7 +550,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have delete permission for data source [没有数据源的删除权限]");
                     }
@@ -583,7 +583,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have operation permission for data source [没有数据源的操作权限]");
                     }
@@ -622,7 +622,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have query permission for data source [没有数据源的查询权限]");
                     }
@@ -656,7 +656,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, userName)) {
                         return Message.error(
                                 "Don't have query permission for data source [没有数据源的查询权限]");
                     }
@@ -691,7 +691,7 @@ public class DataSourceCoreRestfulApi {
                         return Message.error("No Exists The DataSource [不存在该数据源]");
                     }
 
-                    if (!AuthContext.hasPermission(dataSource, request)) {
+                    if (!AuthContext.hasPermission(dataSource, operator)) {
                         return Message.error(
                                 "Don't have operation permission for data source [没有数据源的操作权限]");
                     }

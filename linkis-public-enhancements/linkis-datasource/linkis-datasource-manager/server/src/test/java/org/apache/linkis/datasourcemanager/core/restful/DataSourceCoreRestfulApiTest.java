@@ -35,6 +35,7 @@ import org.apache.linkis.server.conf.ServerConfiguration;
 import org.apache.linkis.server.utils.ModuleUserUtils;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockedStatic;
@@ -102,6 +103,11 @@ class DataSourceCoreRestfulApiTest {
     @AfterAll
     private static void close() {
         moduleUserUtils.close();
+    }
+
+    @BeforeEach
+    public void setUp() {
+
     }
 
     @Test
@@ -204,6 +210,9 @@ class DataSourceCoreRestfulApiTest {
         JsonUtils.jackson().writeValue(dsJsonWriter, params);
 
 
+        moduleUserUtils
+                .when(() -> ModuleUserUtils.getOperationUser(isA(HttpServletRequest.class), isA(String.class)))
+                .thenReturn("testUser");
         Message res = mvcUtils.getMessage(mvcUtils.buildMvcResultPost(url, dsJsonWriter.toString()));
         assertTrue(
                 MessageStatus.ERROR() == res.getStatus()
@@ -246,6 +255,7 @@ class DataSourceCoreRestfulApiTest {
         assertTrue(
                 MessageStatus.ERROR() == res.getStatus()
                         && res.getMessage().contains("No Exists The DataSource"));
+
 
         moduleUserUtils
                 .when(() -> ModuleUserUtils.getOperationUser(isA(HttpServletRequest.class), isA(String.class)))
@@ -536,7 +546,7 @@ class DataSourceCoreRestfulApiTest {
         dataSource.setDataSourceType(dataSourceType);
         moduleUserUtils
                 .when(() -> ModuleUserUtils.getOperationUser(isA(HttpServletRequest.class), isA(String.class)))
-                .thenReturn("testUser", "testUser", "testUser", "hadoop");
+                .thenReturn("testUser", "testUser",  "hadoop");
         Mockito.when(dataSourceInfoService.getDataSourceInfoForConnect(dataSourceId, version))
                 .thenReturn(null)
                 .thenReturn(dataSource);
