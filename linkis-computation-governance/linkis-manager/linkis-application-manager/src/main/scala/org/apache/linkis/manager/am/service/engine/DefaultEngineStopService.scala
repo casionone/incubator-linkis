@@ -121,9 +121,9 @@ class DefaultEngineStopService extends AbstractEngineService with EngineStopServ
       ecmInstance: String,
       withMultiUserEngine: Boolean,
       operatorName: String
-  ): java.util.Map[String, Object] = {
+  ): java.util.Map[String, Any] = {
 
-    val resultMap = new util.HashMap[String, Object]
+    val resultMap = new util.HashMap[String, Any]
     var killEngineNum = 0;
 
     // get all unlock ec node of the specified ecm
