@@ -43,7 +43,7 @@ jobs:
 
       - name: Get Version
         run: |
-          BRANCE = ${{ matrix.branch }}
+          BRANCE = "${{ matrix.branch }}"
           echo "::set-output name=version::${BRANCE#*-}-SNAPSHOT"
         id: get_version
 
