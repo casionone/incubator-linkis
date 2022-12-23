@@ -24,7 +24,6 @@ on: [push]
 
 jobs:
   publish-snapshot:
-    if: ${{ startsWith(github.repository, 'apache/') }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -44,7 +43,7 @@ jobs:
 
       - name: Get Version
         run: |
-          BRANCE= ${{ matrix.branch }}
+          BRANCE = ${{ matrix.branch }}
           echo "::set-output name=version::${BRANCE#*-}-SNAPSHOT"
         id: get_version
 
@@ -53,5 +52,7 @@ jobs:
           ASF_USERNAME: ${{ secrets.NEXUS_USER }}
           ASF_PASSWORD: ${{ secrets.NEXUS_PW }}
         run: |
+          echo "xxx"
+          echo "${{steps.get_version.outputs.version}}"
           ./mvnw versions:set -DnewVersion={{steps.get_version.outputs.version}} -DgenerateBackupPoms=false
           ./mvnw deploy -s  ./.github/asf-settings.xml -Dmaven.test.skip=true -Dmaven.javadoc.skip=true  -DretryFailedDeploymentCount=10
