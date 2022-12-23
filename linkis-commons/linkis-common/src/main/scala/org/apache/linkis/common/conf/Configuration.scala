@@ -17,6 +17,7 @@
 
 package org.apache.linkis.common.conf
 
+import org.apache.commons.lang3.StringUtils
 import org.apache.linkis.common.utils.Logging
 
 object Configuration extends Logging {
@@ -59,18 +60,19 @@ object Configuration extends Logging {
   val JOB_HISTORY_ADMIN = CommonVars("wds.linkis.jobhistory.admin", "hadoop")
 
   // Only the specified token has permission to call some api
-  val GOVERNANCE_STATION_ADMIN_TOKEN = CommonVars("wds.linkis.governance.station.admin.token", "")
+  val GOVERNANCE_STATION_ADMIN_TOKEN_STARTWITH = "ADMIN-"
 
   val VARIABLE_OPERATION: Boolean = CommonVars("wds.linkis.variable.operation", false).getValue
 
-  private val adminUsers = GOVERNANCE_STATION_ADMIN.getValue.split(",")
-
-  def isAdmin(username: String): Boolean = {
-    adminUsers.exists(username.equalsIgnoreCase)
-  }
-
+  private val adminUsers = GOVERNANCE_STATION_ADMIN.getHotValue.split(",")
+  private val historyAdminUsers = JOB_HISTORY_ADMIN.getHotValue.split(",")
   def isAdminToken(token: String): Boolean = {
-    GOVERNANCE_STATION_ADMIN_TOKEN.getValue.split(",").exists(token.equalsIgnoreCase)
+    if (StringUtils.isBlank(token)) {
+        return false
+    }
+    else {
+      return token.toUpperCase().startsWith(GOVERNANCE_STATION_ADMIN_TOKEN_STARTWITH)
+    }
   }
 
   def getGateWayURL(): String = {
@@ -95,10 +97,12 @@ object Configuration extends Logging {
     linkisHome
   }
 
-  def isStationAdmin(username: String): Boolean = {
-    GOVERNANCE_STATION_ADMIN.getValue
-      .split(",")
-      .exists(username.equalsIgnoreCase)
+  def isAdmin(username: String): Boolean = {
+    adminUsers.exists(username.equalsIgnoreCase)
+  }
+
+  def isNotAdmin(username: String): Boolean = {
+    return !isAdmin(username)
   }
 
   def isJobHistoryAdmin(username: String): Boolean = {
@@ -107,9 +111,7 @@ object Configuration extends Logging {
   }
 
   def getJobHistoryAdmin(): Array[String] = {
-    val stationAdmin = GOVERNANCE_STATION_ADMIN.getValue.split(",")
-    val historyAdmin = JOB_HISTORY_ADMIN.getValue.split(",")
-    (stationAdmin ++ historyAdmin).distinct
+    (adminUsers ++ historyAdminUsers).distinct
   }
 
 }
